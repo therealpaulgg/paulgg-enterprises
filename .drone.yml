@@ -1,0 +1,51 @@
+kind: pipeline
+name: portfolio
+type: docker
+steps: 
+  - 
+    commands: 
+      - yarn
+    image: "node:alpine"
+    name: deps
+  - 
+    commands: 
+      - "yarn build"
+    image: "node:alpine"
+    name: build
+  - 
+    name: copyfiles
+    image: appleboy/drone-scp
+    settings:
+      host:
+        from_secret: HOST
+      port: 22
+      key:
+        from_secret: SSH_KEY
+      source: dist
+      target: ~/apps/portfolio
+      username:
+        from_secret: USER
+      when:
+        branch:
+        - master
+        event:
+        - push
+  -
+    name: deploy
+    image: appleboy/drone-ssh
+    settings:
+      settings:
+      host:
+        from_secret: HOST
+      port: 22
+      key:
+        from_secret: SSH_KEY
+      username:
+        from_secret: USER
+      script:
+        bash ~/apps/portfolio/deploy.sh
+      when:
+        branch:
+        - master
+        event:
+        - push

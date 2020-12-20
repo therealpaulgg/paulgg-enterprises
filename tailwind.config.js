@@ -18,6 +18,7 @@ module.exports = {
             fontFamily: {
                 body: ["Open Sans", "sans-serif"],
                 code: ["Fira Code", "monospace"],
+                resume: ["IBM Plex Serif", "sans-serif"],
             },
         },
     },

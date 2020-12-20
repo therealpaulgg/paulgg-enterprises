@@ -1,8 +1,5 @@
 <template>
-    <nav
-        class="bg-gray-200
-        dark:bg-custom-pink p-3"
-    >
+    <nav class="bg-custom-pink p-3">
         <div class="mx-auto container sm:px-4">
             <div class="relative flex items-center justify-between h-16">
                 <div
@@ -23,7 +20,7 @@
                 >
                     <div class="flex-shrink-0 flex items-center">
                         <span
-                            class="dark:text-white font-semibold text-xl tracking-tight"
+                            class="text-white font-semibold text-xl tracking-tight"
                             ><slot name="name"
                         /></span>
                     </div>

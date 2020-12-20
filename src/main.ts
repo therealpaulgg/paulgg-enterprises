@@ -16,9 +16,7 @@ import {
     faSortDown,
     faPaperclip,
     faBars,
-    faEnvelope,
 } from "@fortawesome/free-solid-svg-icons"
-import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons"
 import store from "./store"
 
 library.add(
@@ -34,10 +32,7 @@ library.add(
     faSortUp,
     faSortDown,
     faPaperclip,
-    faBars,
-    faLinkedin,
-    faGithub,
-    faEnvelope
+    faBars
 )
 
 import "@/styles/index.scss"

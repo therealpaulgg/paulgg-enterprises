@@ -22,7 +22,7 @@
 
         <hr class="mt-6 mb-2" />
 
-        <div v-if="content" class="markdown-body">
+        <div v-if="content">
             <div v-html="content" />
         </div>
         <div v-else class="text-center">

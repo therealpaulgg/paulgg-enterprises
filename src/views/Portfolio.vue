@@ -1,6 +1,10 @@
 <template>
     <div class="home container mx-auto px-4 pt-4">
-        <p v-for="i of [...range(1, 100)]" :key="i">lots of content</p>
+        <p>
+            I've made a lot of stuff. Some things I like, some things I thought
+            were impressive and now don't seem to be. So I need to revise this
+            section. I'll be putting it here later.
+        </p>
     </div>
 </template>
 
@@ -8,14 +12,7 @@
 import { defineComponent } from "vue"
 export default defineComponent({
     setup() {
-        function* range(start: number, end: number) {
-            for (let i = start; i <= end; i++) {
-                yield i
-            }
-        }
-        return {
-            range,
-        }
+        // TODO
     },
 })
 </script>
