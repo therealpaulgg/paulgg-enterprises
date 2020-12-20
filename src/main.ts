@@ -16,7 +16,9 @@ import {
     faSortDown,
     faPaperclip,
     faBars,
+    faEnvelope,
 } from "@fortawesome/free-solid-svg-icons"
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons"
 import store from "./store"
 
 library.add(
@@ -32,7 +34,10 @@ library.add(
     faSortUp,
     faSortDown,
     faPaperclip,
-    faBars
+    faBars,
+    faLinkedin,
+    faGithub,
+    faEnvelope
 )
 
 import "@/styles/index.scss"
@@ -62,3 +67,10 @@ app.directive("click-outside", {
         document.removeEventListener("click", el.__vueClickEventHandler__)
     },
 })
+
+const title = "Paul Gellai Portfolio"
+router.afterEach(
+    (to) =>
+        (document.title =
+            to.meta && to.meta.title ? `${to.meta.title} | ${title}` : title)
+)

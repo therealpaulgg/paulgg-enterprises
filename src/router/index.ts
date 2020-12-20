@@ -8,16 +8,29 @@ const routes: Array<RouteRecordRaw> = [
         path: "/",
         name: "Home",
         component: Home,
+        meta: {
+            title: "Home",
+        },
     },
     {
         path: "/portfolio",
         name: "Portfolio",
         component: Portfolio,
+        meta: {
+            title: "Portfolio",
+        },
     },
     {
         path: "/skills",
         name: "Skills",
         component: Skills,
+        meta: {
+            title: "Skills",
+        },
+    },
+    {
+        path: "/:catchAll(.*)",
+        redirect: "/",
     },
 ]
 
