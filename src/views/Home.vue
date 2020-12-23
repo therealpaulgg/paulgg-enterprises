@@ -51,7 +51,7 @@
             Linux, gaming, music, and computer hardware.
         </div>
         <div class="my-2">
-            Currently I am a software engineering intern at custom (full
+            Currently I am a software engineering intern at L3Harris (full
             time). I also do freelance web development and IT. If you are
             interested you may contact me at my email.
         </div>
