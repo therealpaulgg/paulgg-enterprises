@@ -52,7 +52,8 @@
         </div>
         <div class="my-2">
             Currently I am a software engineering intern at L3Harris (full
-            time). I also do freelance web development and IT. If you are
+            time). I also do freelance web development and IT (Linux, Windows
+            Server, VPNs, mail servers, technical support, etc.). If you are
             interested you may contact me at my email.
         </div>
     </div>
