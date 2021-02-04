@@ -46,12 +46,16 @@
         <div v-if="content">
             <div v-html="content" />
         </div>
+        <div v-else class="text-center">
+            <loading-circle />
+        </div>
     </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, onMounted, ref, computed } from "vue"
 import Typewriter from "@/components/view/Typewriter.vue"
+import LoadingCircle from "@/components/page/LoadingCircle.vue"
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
 import Axios from "axios"
 import store from "@/store"
@@ -62,6 +66,7 @@ export default defineComponent({
     name: "Home",
     components: {
         FontAwesomeIcon,
+        LoadingCircle,
         Typewriter,
     },
     setup() {
