@@ -43,34 +43,43 @@
             </div>
         </div>
         <hr class="my-4" />
-        <div class="my-2">
-            Hello! My name is Paul Gellai. My first name is Andrew, but I go by
-            Paul (my middle name). I am a Master's Computer Science student at
-            Arizona State University. I've always had a passion for tech since a
-            young age. My interests include software development, cybersecurity,
-            Linux, gaming, music, and computer hardware.
-        </div>
-        <div class="my-2">
-            Currently I am a software engineering intern at L3Harris (full
-            time). I also do freelance web development and IT (Linux, Windows
-            Server, VPNs, mail servers, technical support, etc.). If you are
-            interested you may contact me at my email.
+        <div v-if="content">
+            <div v-html="content" />
         </div>
     </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue"
+import { defineComponent, onMounted, ref, computed } from "vue"
 import Typewriter from "@/components/view/Typewriter.vue"
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
-// import Button from "@/components/inputs/Button.vue"
+import Axios from "axios"
+import store from "@/store"
+import DOMPurify from "dompurify"
+import marked from "marked"
 
 export default defineComponent({
     name: "Home",
     components: {
         FontAwesomeIcon,
         Typewriter,
-        // Button,
+    },
+    setup() {
+        const markdown = ref("")
+        const content = computed(() => {
+            const unsanitized = marked(markdown.value)
+            return DOMPurify.sanitize(unsanitized)
+        })
+
+        onMounted(() => {
+            Axios.get("https://static.paulgellai.dev/personal/about.md")
+                .then((res) => (markdown.value = res.data))
+                .catch((err) => store.dispatch("handleError", err))
+        })
+
+        return {
+            content,
+        }
     },
 })
 </script>
