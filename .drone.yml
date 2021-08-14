@@ -1,6 +1,6 @@
 kind: pipeline
 type: docker
-name: startpageredux
+name: build
 
 steps:
 - name: build
@@ -8,6 +8,10 @@ steps:
   commands:
   - yarn
   - yarn build
+
+kind: pipeline
+type: docker
+name: deploy
 
 - name: copyfiles
   image: appleboy/drone-scp
@@ -21,11 +25,6 @@ steps:
     target: ~/apps/redux
     username:
       from_secret: USER
-  trigger:
-    branch: 
-    - master
-    event: 
-    - push
 
 - name: deploy
   image: appleboy/drone-ssh
@@ -38,8 +37,10 @@ steps:
     username:
       from_secret: USER
     script: bash ~/apps/portfolio/deploy.sh
-  trigger:
-    branch:
-    - master
-    event:
-    - push
+
+trigger:
+  branch: 
+  - master
+  event: 
+  - push
+
