@@ -1,6 +1,6 @@
 kind: pipeline
 type: docker
-name: startpageredux
+name: portfolio
 
 steps:
 - name: build
@@ -18,7 +18,7 @@ steps:
     key:
       from_secret: SSH_KEY
     source: dist
-    target: ~/apps/redux
+    target: ~/apps/portfolio
     username:
       from_secret: USER
   when:
