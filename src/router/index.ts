@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router"
-import Home from "@/views/Home.vue"
-import Portfolio from "@/views/Portfolio.vue"
-import Skills from "@/views/Skills.vue"
+import Home from "/@/views/Home.vue"
+import Portfolio from "/@/views/Portfolio.vue"
+import Skills from "/@/views/Skills.vue"
 
 const routes: Array<RouteRecordRaw> = [
     {
@@ -35,7 +35,7 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
-    history: createWebHistory(process.env.BASE_URL),
+    history: createWebHistory(import.meta.env.BASE_URL),
     routes,
 })
 

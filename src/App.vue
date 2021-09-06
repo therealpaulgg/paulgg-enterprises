@@ -2,7 +2,12 @@
     <div :class="{ dark: theme === 'dark' }" class="font-body">
         <div
             id="app"
-            class="relative dark:bg-custom-dark-theme dark:text-white min-100 pb-16"
+            class="
+                relative
+                dark:bg-custom-dark-theme dark:text-white
+                min-100
+                pb-16
+            "
         >
             <navbar class="sticky top-0 shadow-lg">
                 <template #name>
@@ -26,18 +31,27 @@
                 </template>
                 <template #right>
                     <Button circular @click="changeTheme()">
-                        <font-awesome-icon
+                        <fa-icon
                             v-if="theme === 'dark'"
                             icon="moon"
                         />
-                        <font-awesome-icon v-else icon="sun" />
+                        <fa-icon v-else icon="sun" />
                     </Button>
                 </template>
             </navbar>
             <feedback />
             <router-view />
             <footer
-                class="absolute bottom-0 left-0 right-0 text-center p-3 bg-gray-200 dark:bg-custom-titanium"
+                class="
+                    absolute
+                    bottom-0
+                    left-0
+                    right-0
+                    text-center
+                    p-3
+                    bg-gray-200
+                    dark:bg-custom-titanium
+                "
             >
                 <div class="mx-auto container">
                     Copyright © {{ year }} Paul Gellai. All rights reserved.
@@ -48,13 +62,16 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from "vue"
-import store from "@/store/index"
-import Navbar from "@/components/page/Navbar.vue"
-import NavbarLink from "@/components/page/NavbarLink.vue"
-import Button from "@/components/inputs/Button.vue"
-import Feedback from "@/components/view/Feedback.vue"
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
+import { defineComponent, computed, DefineComponent } from "vue"
+import store from "/@/store/index"
+import Navbar from "/@/components/page/Navbar.vue"
+import NavbarLink from "/@/components/page/NavbarLink.vue"
+import Button from "/@/components/inputs/Button.vue"
+import Feedback from "/@/components/view/Feedback.vue"
+import {
+    FontAwesomeIcon,
+    FontAwesomeIconProps,
+} from "@fortawesome/vue-fontawesome"
 import Typewriter from "./components/view/Typewriter.vue"
 import dayjs from "dayjs"
 export default defineComponent({
@@ -66,6 +83,8 @@ export default defineComponent({
         FontAwesomeIcon,
         Feedback,
         Typewriter,
+        "fa-icon":
+            FontAwesomeIcon as unknown as DefineComponent<FontAwesomeIconProps>,
     },
     setup() {
         const changeTheme = () => store.commit("toggleTheme")

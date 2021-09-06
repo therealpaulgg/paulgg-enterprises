@@ -20,7 +20,7 @@
                         <div class="shadow w-100 feedback rounded-md m-4">
                             <div class="flex justify-between p-4">
                                 <div>
-                                    <font-awesome-icon
+                                    <fa-icon
                                         class="pb-1"
                                         :icon="
                                             getRelevantIcon(feedback.variant)
@@ -34,10 +34,7 @@
                                         @click="feedback.active = false"
                                         class="appearance-none"
                                     >
-                                        <font-awesome-icon
-                                            icon="times"
-                                            scale="1"
-                                        />
+                                        <fa-icon icon="times" scale="1" />
                                     </button>
                                 </div>
                             </div>
@@ -56,14 +53,18 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from "vue"
-import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome"
+import { defineComponent, computed, DefineComponent } from "vue"
+import {
+    FontAwesomeIcon,
+    FontAwesomeIconProps,
+} from "@fortawesome/vue-fontawesome"
 import store from "../../store/index"
 
 export default defineComponent({
     name: "Home",
     components: {
-        FontAwesomeIcon,
+        "fa-icon":
+            FontAwesomeIcon as unknown as DefineComponent<FontAwesomeIconProps>,
     },
     setup() {
         const feedbacks = computed(

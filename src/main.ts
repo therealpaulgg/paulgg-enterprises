@@ -17,8 +17,13 @@ import {
     faPaperclip,
     faBars,
     faEnvelope,
+    faKey,
 } from "@fortawesome/free-solid-svg-icons"
-import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons"
+import {
+    faLinkedin,
+    faGithub,
+    faKeybase,
+} from "@fortawesome/free-brands-svg-icons"
 import store from "./store"
 
 library.add(
@@ -37,17 +42,19 @@ library.add(
     faBars,
     faLinkedin,
     faGithub,
-    faEnvelope
+    faEnvelope,
+    faKeybase,
+    faKey
 )
 
-import "@/styles/index.scss"
+import "/@/styles/index.scss"
 
 const app = createApp(App)
 app.use(store)
 app.use(router)
 app.mount("#app")
 app.directive("click-outside", {
-    beforeMount: function(el, binding) {
+    beforeMount: function (el, binding) {
         // Define ourClickEventHandler
         const ourClickEventHandler = (event: Event) => {
             if (!el.contains(event.target) && el !== event.target) {
@@ -62,7 +69,7 @@ app.directive("click-outside", {
         // attaching ourClickEventHandler to a listener on the document here
         document.addEventListener("click", ourClickEventHandler)
     },
-    unmounted: function(el) {
+    unmounted: function (el) {
         // Remove Event Listener
         document.removeEventListener("click", el.__vueClickEventHandler__)
     },
