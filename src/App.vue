@@ -12,51 +12,22 @@
             <navbar class="sticky top-0 shadow-lg">
                 <template #name>
                     <div>
-                        <div class="pr-4">Paul Gellai Portfolio</div>
-                        <div class="font-code text-base">
-                            <typewriter
-                                :words="['Hack', 'The', 'Planet', '🌎']"
-                                :next-word-interval="100"
-                            />
-                        </div>
+                        <div class="pr-4">PaulGG Enterprises</div>
                     </div>
                 </template>
                 <template #links>
                     <navbar-link link="/">Home</navbar-link>
-                    <navbar-link link="/portfolio">Portfolio</navbar-link>
-                    <navbar-link link="/skills">Skills</navbar-link>
-                    <navbar-link href="https://blog.paulgellai.dev"
-                        >Blog</navbar-link
-                    >
                 </template>
                 <template #right>
                     <Button circular @click="changeTheme()">
-                        <fa-icon
-                            v-if="theme === 'dark'"
-                            icon="moon"
-                        />
+                        <fa-icon v-if="theme === 'dark'" icon="moon" />
                         <fa-icon v-else icon="sun" />
                     </Button>
                 </template>
             </navbar>
             <feedback />
             <router-view />
-            <footer
-                class="
-                    absolute
-                    bottom-0
-                    left-0
-                    right-0
-                    text-center
-                    p-3
-                    bg-gray-200
-                    dark:bg-custom-titanium
-                "
-            >
-                <div class="mx-auto container">
-                    Copyright © {{ year }} Paul Gellai. All rights reserved.
-                </div>
-            </footer>
+            <Footer />
         </div>
     </div>
 </template>
@@ -66,6 +37,7 @@ import { defineComponent, computed, DefineComponent } from "vue"
 import store from "/@/store/index"
 import Navbar from "/@/components/page/Navbar.vue"
 import NavbarLink from "/@/components/page/NavbarLink.vue"
+import Footer from "/@/components/page/Footer.vue"
 import Button from "/@/components/inputs/Button.vue"
 import Feedback from "/@/components/view/Feedback.vue"
 import {
@@ -79,6 +51,7 @@ export default defineComponent({
     components: {
         Navbar,
         NavbarLink,
+        Footer,
         Button,
         FontAwesomeIcon,
         Feedback,
@@ -89,11 +62,9 @@ export default defineComponent({
     setup() {
         const changeTheme = () => store.commit("toggleTheme")
         const theme = computed(() => store.state.theme)
-        const year = computed(() => dayjs().format("YYYY"))
         return {
             changeTheme,
             theme,
-            year,
         }
     },
 })

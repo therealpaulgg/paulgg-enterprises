@@ -5,46 +5,18 @@ import { library } from "@fortawesome/fontawesome-svg-core"
 import {
     faMoon,
     faSun,
-    faTimes,
-    faTimesCircle,
-    faCheckCircle,
-    faExclamationTriangle,
-    faInfoCircle,
-    faQuestionCircle,
-    faSort,
-    faSortUp,
-    faSortDown,
-    faPaperclip,
+    faBuilding,
     faBars,
-    faEnvelope,
-    faKey,
+    faTimes,
 } from "@fortawesome/free-solid-svg-icons"
-import {
-    faLinkedin,
-    faGithub,
-    faKeybase,
-} from "@fortawesome/free-brands-svg-icons"
 import store from "./store"
 
 library.add(
     faMoon,
     faSun,
-    faTimes,
-    faTimesCircle,
-    faCheckCircle,
-    faExclamationTriangle,
-    faInfoCircle,
-    faQuestionCircle,
-    faSort,
-    faSortUp,
-    faSortDown,
-    faPaperclip,
+    faBuilding,
     faBars,
-    faLinkedin,
-    faGithub,
-    faEnvelope,
-    faKeybase,
-    faKey
+    faTimes
 )
 
 import "/@/styles/index.scss"
@@ -75,7 +47,7 @@ app.directive("click-outside", {
     },
 })
 
-const title = "Paul Gellai Portfolio"
+const title = "PaulGG Enterprises"
 router.afterEach(
     (to) =>
         (document.title =

@@ -1,5 +1,5 @@
 module.exports = {
-    purge: ["./src/**/*.vue", "./src/**/*.html"],
+    content: ["./src/**/*.vue", "./src/**/*.html"],
     darkMode: "class",
     theme: {
         extend: {
@@ -11,8 +11,10 @@ module.exports = {
                     "dark-titanium": "#1e2323",
                     "steel-black": "#151919",
                     "soft-red": "#fb464d",
-                    "light-pink": "#f55186",
+                    "light-blue": "#f55186",
                     pink: "#e02662",
+                    blue: "#1897CF",
+                    "light-blue": "#6EC3CF"
                 },
             },
             fontFamily: {
@@ -22,6 +24,5 @@ module.exports = {
             },
         },
     },
-    variants: {},
     plugins: [require("@tailwindcss/forms")],
 }

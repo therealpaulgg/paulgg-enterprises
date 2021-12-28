@@ -4,7 +4,7 @@
         :disabled="disabled"
         :class="`${
             active
-                ? 'bg-custom-light-pink text-black'
+                ? 'bg-custom-light-blue text-black'
                 : 'bg-custom-titanium dark:bg-gray-300'
         } text-white dark:text-black shadow text-sm transition duration-200 m-1 btn ${
             uppercase ? 'uppercase' : ''
@@ -15,7 +15,7 @@
         } ${
             disabled
                 ? 'opacity-50 cursor-not-allowed '
-                : 'hover:bg-custom-light-pink dark:hover:text-white dark:hover:bg-custom-light-pink hover:text-white '
+                : 'hover:bg-custom-light-blue dark:hover:text-white dark:hover:bg-custom-light-blue hover:text-white '
         }`"
     >
         <slot />

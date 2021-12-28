@@ -16,7 +16,7 @@ interface FeedbackData {
 export default createStore({
     plugins: [
         createPersistedState({
-            key: "paul-portfolio",
+            key: "paulgg-enterprises",
             paths: ["theme"],
         }),
     ],
