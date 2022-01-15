@@ -21,7 +21,7 @@ import {
 import Axios from "axios"
 import store from "/@/store"
 import DOMPurify from "dompurify"
-import marked from "marked"
+import { marked } from "marked"
 
 export default defineComponent({
     name: "Home",
